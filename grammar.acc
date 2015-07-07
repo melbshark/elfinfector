@@ -1,0 +1,24 @@
+
+%token NUMBER;
+
+expression:
+	term
+;
+
+term:
+	term '+' factor
+|	term '-' factor
+|	factor
+;
+
+factor:
+`	factor '*' primary
+|	factro '/' primary
+|	primary
+;
+
+primary:
+	NUMBER
+|	'(' term ')'
+|	'-' primary
+;
